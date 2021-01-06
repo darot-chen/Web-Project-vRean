@@ -1,8 +1,8 @@
 @extends('layouts.header')
 
 @section('content')
-    <div class="container-fluid d-flex justify-content-center">
-        <div class="row d-flex justify-content-center bg-light sticky-top">
+    <div class="container-fluid d-flex justify-content-center bg-white shadow sticky-top" style="height: 70px">
+        <div class="row d-flex justify-content-center ">
             <nav class="navbar navbar-expand-lg d-flex justify-content-center">
                 <a class="nav-link" href="/joinedclass" style="color:black">Joined Class</a>
                 <a class="nav-link" href="/class" style="color:black">My Class</a>
@@ -30,6 +30,10 @@
             </form>
         </div>
     </div>
+    <h1>Hi</h1> <br>
+    <h1>Hi</h1> <br><br><br><br>
+    <h1>Hi</h1> <br><br><br><br>
+    <h1>Hi</h1> <br><br><br><br>
     <script>
         // Get the modal
             var modaljoinclass = document.getElementById("myModaljoinclass");

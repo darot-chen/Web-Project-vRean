@@ -45,7 +45,7 @@
                 @csrf
                 <div class="row w-100">
                   <!-- Search Box -->
-                  <di class="col-lg-5 col py-1 px-0">
+                  <di class="col-lg-6 col py-1 px-0">
                       <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="search" id="search">
                   </di>
                   <!-- Search Icon -->
@@ -67,16 +67,20 @@
                       <button id="myBtn" class="btn btn-primary"><span class="login">POST</span></button>       
                       <!-- Pop up post  -->
                       <div id="myModal" class="modal">
-                        <div class="modal-content">
-                          <span class="close">&times;</span>
-                          <form class="form-group" action="{{ action('App\Http\Controllers\PostController@store') }}" method="POST" enctype="multipart/form-data">
-                            @csrf
-                                                <h4 style="color:black">Create a post</h4>
-                                                {!! Form::textarea('caption', '', ['class'=>'form-control mb-2','placeholder'=>'Your mind.....']) !!}
-                                                {!! Form::file('photo[]', ['class'=>'form-control mb-2','multiple']) !!}
-                                                {{-- <input type="text" placeholder="What is in your mind?..." class="orm-control form-control-md w-100" name="caption" id="caption"><br><br> --}}
-                                                <input type="submit" name="post" id="post" value="Post" class="submit btn btn-primary w-100">
-                          </form>
+                        <div class="row d-flex justify-content-center" style="height: 100%; background-color: rgba(0, 0, 0, 0.5);">
+                          <div class="col-5 align-self-center">
+                            <div class="modal-content py-3 px-3" >
+                              <span class="close">&times;</span>
+                              <form class="form-group" style="width: 100%;" action="{{ action('App\Http\Controllers\PostController@store') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                  <h4 style="color:black">Create a post</h4>
+                                  {!! Form::textarea('caption', '', ['class'=>'form-control mb-2','placeholder'=>'Your mind.....']) !!}
+                                  {!! Form::file('photo[]', ['class'=>'form-control mb-2','multiple']) !!}
+                                  {{-- <input type="text" placeholder="What is in your mind?..." class="orm-control form-control-md w-100" name="caption" id="caption"><br><br> --}}
+                                  <input type="submit" name="post" id="post" value="Post" class="submit btn btn-primary w-100">
+                              </form>
+                            </div>
+                          </div>
                         </div>
                       </div>
                       <!-- end pop up post -->
@@ -161,7 +165,7 @@
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <main class="py-4">
+        <main class="">
           @yield('content')
         </main>
       </body>    
