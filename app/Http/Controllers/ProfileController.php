@@ -63,12 +63,16 @@ class ProfileController extends Controller
         $user= DB::select('select * from users order by idUser desc');
         $following= DB::select('select * from follows where idFollowing=?',[$request4->input('profileid')]);
         $follower= DB::select('select * from follows where idFollower=?',[$request4->input('profileid')]);
+        $profileimage= DB::select('select idUser, image_profile from users');
+        $username_post= DB::select('select * from users');
         foreach($username as $item){
             return view('layouts.followlist',[
                 'username' => $item->username,
                 'user' => $user,
                 'following' => $following,
-                'follower' => $follower
+                'follower' => $follower,
+                'profileimage' => $profileimage,
+                'username_post' => $username_post
             ]);
         }
         
