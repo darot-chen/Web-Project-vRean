@@ -1,166 +1,102 @@
 @extends('layouts.header')
 
 @section('content')
-    <div class="d-flex justify-content-center py-3">
-        <div class="row d-flex justify-content-center bg-white shadow rounded" style="width: 700px;">
+    {{-- <div class="d-flex justify-content-center py-5 bg-light">
+        <div class="row d-flex justify-content-center bg-white shadow rounded">
             <div class="col-sm-12 col-md-12">
                 <!-- Cover -->
-                @foreach ($coverimage as $item)
-                            @if ($item->image_cover == null)
-                                <div 
-                                    style=" 
-                                        height: 250px; 
-                                        background-image: url(''); 
-                                        background-size: cover;
-                                ">
-                                    <!-- Add Cover photo -->
-                                </div>
-                                <!-- <img class="rounded-circle" src="" alt=""> -->
-                            @else
-                            <div 
-                                style=" 
-                                    height: 250px; 
-                                    background-image: url('/storage/photo/cvimage/{{ $item->image_cover }}'); 
-                                    background-size: cover;
-                            ">
-                                <!-- Add Cover photo -->
-                            </div>
-                                <!-- <img src="/storage/photo/cvimage/{{ $item->image_cover }}" alt=""> -->
-                            @endif
-                    @endforeach
-                
+                <div class="cover-container d-flex justify-content-center">
+                    <img class="imgprofile" src="img/1200px-Ankor_Wat_temple.jpg" alt="">
+                </div>
 
                 <!-- Profile infor -->
-                <div class="row  mx-1 d-flex justify-content-center">
-                    <!-- Profile Photo -->
-                    @foreach ($profileimage as $item)
-                        @if ($item->image_profile == null)
-                            <div class="profile rounded-circle shadow" 
-                                style="
-                                    width: 120px;
-                                    height: 120px; 
-                                    background-image: url(''); 
-                                    background-size: cover; 
-                                    position: relative; 
-                                    bottom: 45px;
-                                ">
-                            </div>
-                            <!-- <img class="rounded-circle border border-primary" src="/img/facebook-default-no-profile-pic1.jpg" alt=""> -->
-                        @else
-                            <div class="profile rounded-circle shadow" 
-                                style="
-                                    width: 120px;
-                                    height: 120px; 
-                                    background-image: url('/storage/photo/pfimage/{{ $item->image_profile }}'); 
-                                    background-size: cover; 
-                                    position: relative; 
-                                    bottom: 45px;
-                                ">
-                            </div>
-                            <!-- <img class="rounded-circle border border-primary" src="/storage/photo/pfimage/{{ $item->image_profile }}" alt=""> -->
-                        @endif
-                    @endforeach
-                    
-                    <div class="col-sm">
+                <div class="row profilebig mx-1 d-flex justify-content-center">
+                    <div class="" style="width: 150px;">
+                        <img class="rounded-circle border border-primary imgprofile" src="/img/facebook-default-no-profile-pic1.jpg" alt="">
+                    </div>
+
+                    <!-- Profile bio -->
+                    <div class="col">
                         <!-- Name and message -->
-                        <div class="text-dark">
-                            <div class="row mb-1 ">
-                                <!-- Profile name -->
-                                <div class="col-sm-9 mt-2 fs-1 fw-bold d-flex justify-content-center">
+                        <div class="text-white border-bottom border-dark">
+                            <div class="row mb-1">
+                                <div class="col-8 mt-2 nameprofile">
                                     @foreach ($username_post as $item_user)
                                         @if ($item_user->idUser==$userid)
-                                            <span class="">{{ $item_user->username }}</span>
+                                            <span class="shadow">{{ $item_user->username }}</span>
                                         @endif
                                     @endforeach
                                 </div>
-                                <!-- Edit btn -->
-                                <div class="col-sm-3 mt-3">
-                                    <!-- btn follow -->
+                                <div class="col-2 mt-1">
+                                    <button type="button" class="btn btn-outline-light">Message</button>
+                                </div>
+                                <div class="col-2 mt-1">
+                                    <button type="button" class="btn btn-outline-light w-100"><i class="fas fa-user"><i class="fas fa-check"></i></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Profile Bio -->
+                        <div class="text-dark py-2">
+                            <p>Hi my name is Darot. I study CS at NIPTICT.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> --}}
+
+    <div class="d-flex justify-content-center py-5 bg-light">
+        <div class="row d-flex justify-content-center bg-white shadow rounded">
+            <div class="col-sm-12 col-md-12">
+                <!-- Cover -->
+                <div class="cover-container2 d-flex justify-content-center">
+                    @foreach ($coverimage as $item)
+                        @if ($item->image_cover == null)
+                            <img class="rounded-circle" src="" alt="">
+                        @else
+                            <img src="/storage/photo/cvimage/{{ $item->image_cover }}" alt="">
+                        @endif
+                    @endforeach
+                    {{-- <img src="/img/1200px-Ankor_Wat_temple.jpg" alt=""> --}}
+                    
+                </div>
+                <!-- Profile infor -->
+                <div class="row anotherprofile mx-1 d-flex justify-content-center">
+                    <!-- Profile Photo -->
+                    <div class="" style="width: 150px;">
+                        @foreach ($profileimage as $itemprofile)
+                            @if ($itemprofile->image_profile == null)
+                                <img class="rounded-circle border border-primary" src="/img/facebook-default-no-profile-pic1.jpg" alt="">
+                            @else
+                                <img class="rounded-circle border border-primary" src="/storage/photo/pfimage/{{ $itemprofile->image_profile }}" alt="">
+                            @endif
+                        @endforeach
+                        {{-- <img class="rounded-circle border border-primary" src="/img/facebook-default-no-profile-pic1.jpg" alt=""> --}}
+                    </div>
+
+                    <div class="col-sm">
+                        <!-- Name and message -->
+                        <div class="text-white border-bottom border-primary">
+                            <div class="row mb-1 ">
+                                <div class="col-sm-9 mt-2 anothernameprofile d-flex justify-content-start">
+                                    @foreach ($username_post as $item_user)
+                                        @if ($item_user->idUser==$userid)
+                                            <span class="shadow">{{ $item_user->username }}</span>
+                                        @endif
+                                    @endforeach    
+                                </div>
+                                <div class="col-sm-3 mt-2">
                                     <form action="{{ action('App\Http\Controllers\ProfileController@followact') }}" method="POST">
                                         @csrf
-                                            <input type="hidden" name="followerid" id="followerid" value="{{ $userid }}">
+                                        <input type="hidden" name="followerid" id="followerid" value="{{ $userid }}">
                                         @if (count($followchecker)==0)
                                             <button type="submit" class="btn btn-primary shadow  w-100">Follow</button>
                                         @else
                                             <button type="submit" class="btn btn-primary shadow  w-100">Following</button>
                                         @endif  
                                     </form>
-                                    <!-- <button type="button" class="btn btn-primary shadow w-100" id="myBtn2"><i class="fas fa-user-edit"></i> Edit</button> -->
-                                    
-                                    <!-- edit form -->
-                                    <div id="myModal2" class="modal2">                                    
-                                        <!-- POST -->
-                                        <div class="modal-content2">
-                                            <span class="close2">&times;</span>
-                                            {{-- <form class="form-group" action="{{ action('App\Http\Controllers\PostController@store') }}" method="POST" enctype="multipart/form-data">
-                                                @csrf
-                                                <h4 style="color:black">Create a post</h4>
-                                                {!! Form::textarea('caption', '', ['class'=>'form-control mb-2','placeholder'=>'Your mind.....']) !!}
-                                                {!! Form::file('photo[]', ['class'=>'form-control mb-2','multiple']) !!}
-                                                
-                                                <input type="submit" name="post" id="post" value="Post" class="submit btn btn-primary w-100">
-                                            </form> --}}
-                                            <form action="{{ action('App\Http\Controllers\ProfileController@geteditprofile') }}" method="POST" enctype="multipart/form-data">
-                                                @csrf
-                                                <label for="coverimage" style="color: black" class="mt-1">Upload Cover</label>
-                                                {{-- {!! Form::file('coverimage', ['class'=>'form-control mb-2']) !!} --}}
-                                                <input type="file" class="form-control" name="coverimage" id="coverimage">
-                    
-                                                <label for="profileimage" style="color: black">Upload Profile</label>
-                                                {!! Form::file('profileimage', ['class'=>'form-control mb-2']) !!}
-                    
-                                                <label for="bio" style="color: black">Update Bio</label>
-                                                <input type="text" class="form-control" name="bio" id="bio">
-
-                                                {{-- <input type="hidden" name="profileid" id="profileid" value="{{ $userid }}"> --}}
-                    
-                                                {{-- <label for="cover" style="color: black">Home Town</label>
-                                                <input type="text" class="form-control">
-                    
-                                                <label for="profile" style="color: black">Address Now </label>
-                                                <input type="text" class="form-control">
-                    
-                                                <label for="school" style="color: black">School</label>
-                                                <input type="text" class="form-control">
-                    
-                                                <label for="birthday" style="color: black">Birthday</label>
-                                                <input type="Date" class="form-control"> --}}
-                    
-                                                <input type="submit" name="editprofile" id="editprofile" class="btn btn-primary mt-2">
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <script>
-                                        // Get the modal
-                                        var modal2 = document.getElementById("myModal2");
-                                        
-                                        // Get the button that opens the modal
-                                        var btn2 = document.getElementById("myBtn2");
-                                        
-                                        // Get the <span> element that closes the modal
-                                        var span2 = document.getElementsByClassName("close2")[0];
-                                        
-                                        // When the user clicks the button, open the modal 
-                                        btn2.onclick = function() {
-                                        modal2.style.display = "block";
-                                        }
-                                        
-                                        // When the user clicks on <span> (x), close the modal
-                                        span2.onclick = function() {
-                                        modal2.style.display = "none";
-                                        }
-                                        
-                                        // When the user clicks anywhere outside of the modal, close it
-                                        window.onclick = function(event) {
-                                        if (event.target == modal2) {
-                                            modal2.style.display = "none";
-                                        }
-                                        }
-                                    </script>
                                 </div>
-                                <!-- <div class="col-sm-3 ">
-                                    <button type="button" class="mt-3 btn btn-primary shadow  w-100">Edit</button>
-                                </div> -->
                             </div>
                         </div>
                         <!-- Profile Bio -->
@@ -169,11 +105,6 @@
                                 <p>{{ $item->bio }}</p>
                             @endforeach
                         </div>
-                        <!-- <div class="text-dark py-2 border-bottom border-primary">
-                            @foreach ($bio as $item)
-                                <p>{{ $item->bio }}</p>
-                            @endforeach
-                        </div> -->
                         <!-- Follow Information -->
                         <div class="text-dark w-100">
                             <div class="row follow mb-3">
@@ -245,17 +176,16 @@
                                     <span>May 17 2002</span>
                                 </div>
                             </div>
-                        </div>
-                        <!--- end user info-->
+                        </div><!--- end user info-->
+                        
                     </div>
                 </div>
             </div>
         </div>
-
         
     </div>
 
-    <!-- show post history -->
+
     @if (count($posts)>0)
             @foreach ($posts as $item)
                 @foreach ($username_post as $item_user)
@@ -267,12 +197,12 @@
                                     <div class="col-2 profile ">
                                         @foreach ($profileimage as $itemprofile)
                                             @if ($itemprofile->image_profile == null)
-                                                <a href="profile/{{ $item_user->idUser }}"><img class="" src="/img/facebook-default-no-profile-pic1.jpg" alt=""></a>
+                                                <a href="profile/{{ $item_user->idUser }}"><img class="border border-primary" src="/img/facebook-default-no-profile-pic1.jpg" alt=""></a>
                                             @else
-                                                <a href="profile/{{ $item_user->idUser }}"><img class="" src="/storage/photo/pfimage/{{ $itemprofile->image_profile }}" alt=""></a>
+                                                <a href="profile/{{ $item_user->idUser }}"><img class="border border-primary" src="/storage/photo/pfimage/{{ $itemprofile->image_profile }}" alt=""></a>
                                             @endif
                                         @endforeach
-                                        {{-- <a href="profile/{{ $item_user->idUser }}"><img class="" src="/img/facebook-default-no-profile-pic1.jpg" alt="profile"></a> --}}
+                                        {{-- <a href="profile/{{ $item_user->idUser }}"><img class="border border-primary" src="/img/facebook-default-no-profile-pic1.jpg" alt="profile"></a> --}}
                                     </div>
                                     <div class="col-10 name">
                                         <a style="text-decoration: none; color: black" href="profile/{{ $item_user->idUser }}" ><p>{{ $item_user->username }}</p></a>
@@ -391,5 +321,4 @@
           }
         }
     </script>
-
 @endsection

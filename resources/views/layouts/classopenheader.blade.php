@@ -1,12 +1,12 @@
 @extends('layouts.header')
 
 @section('content')
-    <div class="container-fluid d-flex justify-content-center bg-white shadow sticky-top" style="height: 70px">
-        <div class="row d-flex justify-content-center ">
+    <div class="container-fluid d-flex justify-content-center bg-white shadow position-relative sticky-top" style="height: 70px">
+        <div class="row d-flex justify-content-center w-100">
             <nav class="navbar navbar-expand-lg d-flex justify-content-center">
-                <a class="nav-link" href="/joinedclass" style="color:black">Joined Class</a>
-                <a class="nav-link" href="/class" style="color:black">My Class</a>
-                <a class="nav-link" id="joinclassbtn" style="color:black">Join Class</a>
+                <a class="col-2 nav-link btn btn-outline-dark" href="#" style="color:black; " >Joined Class</a> <!--/joinedclass -->
+                <a class="col-2 nav-link btn btn-outline-dark" href="#" style="color:black">My Class</a> <!--/class -->
+                <a class="col-2 nav-link btn btn-outline-dark" id="joinclassbtn" style="color:black">Join Class</a> <!--/joinedclass -->
             </nav>
         </div>
         {{-- <div class="row d-flex justify-content-center bg-light sticky-top">
@@ -30,10 +30,6 @@
             </form>
         </div>
     </div>
-    <h1>Hi</h1> <br>
-    <h1>Hi</h1> <br><br><br><br>
-    <h1>Hi</h1> <br><br><br><br>
-    <h1>Hi</h1> <br><br><br><br>
     <script>
         // Get the modal
             var modaljoinclass = document.getElementById("myModaljoinclass");
