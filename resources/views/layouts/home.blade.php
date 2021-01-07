@@ -35,9 +35,29 @@
                                         @foreach ($profileimage as $itemprofile)
                                             @if ($itemprofile->idUser==$item_user->idUser)
                                                 @if ($itemprofile->image_profile == null)
-                                                    <a href="profile/{{ $item_user->idUser }}"><img class="" src="/img/facebook-default-no-profile-pic1.jpg" alt=""></a>
+                                                    <a href="profile/{{ $item_user->idUser }}">
+                                                        <div class="profile rounded-circle shadow" 
+                                                            style="
+                                                                width: 45px;
+                                                                height: 45px; 
+                                                                background-image: url(''); 
+                                                                background-size: cover; 
+                                                            ">
+                                                        </div>
+                                                    </a>
+                                                    <!-- <a href="profile/{{ $item_user->idUser }}"><img class="" src="/img/facebook-default-no-profile-pic1.jpg" alt=""></a> -->
                                                 @else
-                                                    <a href="profile/{{ $item_user->idUser }}"><img class="" src="/storage/photo/pfimage/{{ $itemprofile->image_profile }}" alt=""></a>
+                                                    <a href="profile/{{ $item_user->idUser }}">
+                                                        <div class="profile rounded-circle shadow" 
+                                                            style="
+                                                                width: 45px;
+                                                                height: 45px; 
+                                                                background-image: url('/storage/photo/pfimage/{{ $itemprofile->image_profile }}'); 
+                                                                background-size: cover; 
+                                                            ">
+                                                        </div>
+                                                    </a>
+                                                    <!-- <a href="profile/{{ $item_user->idUser }}"><img class="" src="/storage/photo/pfimage/{{ $itemprofile->image_profile }}" alt=""></a> -->
                                                 @endif
                                             @endif
                                         @endforeach                                                    
