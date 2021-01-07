@@ -183,19 +183,41 @@
                                 </div>
                                 <div class="col-4">
                                     @if (count($followercounter)==0)
-                                        <a href="#" class="text-dark ">0 Follower</a>
+                                        <form action="{{ action('App\Http\Controllers\ProfileController@followlist') }}" method="post">
+                                            @csrf
+                                            <label for="follower0" class="text-dark">0 follower</label>
+                                            <input type="hidden" name="profileid" value="{{ $userid }}">
+                                            <input type="submit" style="display: none;" name="follower0" id="follower0">
+                                        </form>
                                     @endif
                                     @foreach ($followercounter as $item)
-                                        <a href="#" class="text-dark ">{{ $item->followernumber }} Follower</a>
+                                        <form action="{{ action('App\Http\Controllers\ProfileController@followlist') }}" method="post">
+                                            @csrf
+                                            <label for="follower" class="text-dark">{{ $item->followernumber }} follower</label>
+                                            <input type="hidden" name="profileid" value="{{ $userid }}">
+                                            <input type="submit" style="display: none;" name="follower" id="follower">
+                                        </form>
+                                        {{-- <a href="#" class="text-dark ">{{ $item->followernumber }} Follower</a> --}}
                                     @endforeach
                                     
                                 </div>
                                 <div class="col-4">
                                     @if (count($followingcounter)==0)
-                                        <a href="#" class="text-dark ">0 Following</a>
+                                        <form action="{{ action('App\Http\Controllers\ProfileController@followlist') }}" method="post">
+                                            @csrf
+                                            <label for="following0" class="text-dark">0 following</label>
+                                            <input type="hidden" name="profileid" value="{{ $userid }}">
+                                            <input type="submit" style="display: none;" name="following0" id="following0">
+                                        </form>
                                     @endif
                                     @foreach ($followingcounter as $item)
-                                        <a href="#" class="text-dark ">{{ $item->followingnumber }} Following</a>
+                                        <form action="{{ action('App\Http\Controllers\ProfileController@followlist') }}" method="post">
+                                            @csrf
+                                            <label for="following" class="text-dark">{{ $item->followingnumber }} following</label>
+                                            <input type="hidden" name="profileid" value="{{ $userid }}">
+                                            <input type="submit" style="display: none;" name="following" id="following">
+                                        </form>
+                                        {{-- <a href="#" class="text-dark ">{{ $item->followingnumber }} Following</a> --}}
                                     @endforeach
                                 </div>
                             </div>

@@ -52,6 +52,29 @@ class ProfileController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     *
+     * @param  \Illuminate\Http\Request  $request4
+     * @return \Illuminate\Http\Response
+     */
+    public function followlist(Request $request4){
+        $myid=session('id');
+        $username=DB::select('select username from users where idUser=?',[$myid]);
+        $user= DB::select('select * from users order by idUser desc');
+        $following= DB::select('select * from follows where idFollowing=?',[$request4->input('profileid')]);
+        $follower= DB::select('select * from follows where idFollower=?',[$request4->input('profileid')]);
+        foreach($username as $item){
+            return view('layouts.followlist',[
+                'username' => $item->username,
+                'user' => $user,
+                'following' => $following,
+                'follower' => $follower
+            ]);
+        }
+        
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
