@@ -3,7 +3,7 @@
 @section('content')
     <div class="container-fluid"> <!-- edited -->
         <!-- edited -->
-        <div class="row d-flex justify-content-center sticky-top py-0" style="top:60px;">
+        <div class="row d-flex justify-content-center sticky-top py-0" style="top: 65px">
             <div class="w-100 bg-light shadow" >
                 <nav class="navbar navbar-expand-lg d-flex justify-content-center">
                     <a class="nav-link active" href="#">Stream</a>

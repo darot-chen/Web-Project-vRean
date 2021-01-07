@@ -26,7 +26,7 @@
             @foreach ($posts as $item)
                 @foreach ($username_post as $item_user)
                     @if ($item_user->idUser==$item->User_idUser)                            
-                        <div class="d-flex justify-content-center my-3">
+                        <div class="d-flex justify-content-center my-3" style="overflow: hidden">
                             <div class="post px-2 py-3 rounded shadow">
                                 <div class="row px-2">
                                     <!-- Post owner -->

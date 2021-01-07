@@ -54,7 +54,6 @@
                                             <input type="hidden" name="idclass" value="{{ $item_class->idclass }}">
                                             <input class="btn btn-primary rounded-pill" type="submit" value="Go">
                                         </form>
-                                        
                                     </div>
                                 </div>
                             </div>
@@ -68,6 +67,13 @@
             
         @endif
     </div>
+    <h1>H</h1>
+    <h1>H</h1>
+    <h1>H</h1>
+
+    <h1>H</h1>
+    <h1>H</h1>
+    <h1>H</h1>
     <script>
         // Get the modal
             var modalcreateclass = document.getElementById("myModalcreateclass");

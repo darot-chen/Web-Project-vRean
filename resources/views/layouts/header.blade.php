@@ -26,7 +26,7 @@
         <script src="https://kit.fontawesome.com/cb214ee1de.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark px-3 shadow">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark px-3 shadow" style="z-index: 9999;">
         <a class="navbar-brand" href="{{ route('logo') }}" style="font-size: 24px; font-weight: 600;">
           <img src="/img/vrean_png.png" width="40" height="40" class="d-inline-block align-top" alt="">
           vRean
@@ -102,7 +102,7 @@
                   </div>
                   <!-- Profile dropdown -->
                   <div class="col">
-                    <li class="nav-item dropdown d-flex justify-content-center">
+                    <li class="nav-item dropdown d-flex justify-content-center ">
                       <a class="nav-link dropdown-toggle text-primary " href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-user"></i>
                         {{-- {{ $username }} --}}

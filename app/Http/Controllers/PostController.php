@@ -22,6 +22,16 @@ class PostController extends Controller
         $username = DB::select('select * from users where idUser=?',[$value]);
         $post= DB::select('select * from posts order by idPost desc');
         $post_file=DB::select('select * from post_files');
+
+        // $post = DB::table('posts')
+        // ->select('posts.*')
+        // ->orderBy('posts.idPost', 'desc')
+        // ->paginate(10);
+
+        // $post_file = DB::table('post_files')
+        // ->select('post_files.*')
+        // ->paginate(10);
+
         $username_post= DB::select('select * from users');
         $likecounter= DB::select('select count(idUser) as likenumber, idPost from likes group by idPost');
         $likecheck= DB::select('select * from likes');

@@ -6,28 +6,28 @@
             <div class="col-sm-12 col-md-12">
                 <!-- Cover -->
                 @foreach ($coverimage as $item)
-                            @if ($item->image_cover == null)
-                                <div 
-                                    style=" 
-                                        height: 250px; 
-                                        background-image: url(''); 
-                                        background-size: cover;
-                                ">
-                                    <!-- Add Cover photo -->
-                                </div>
-                                <!-- <img class="rounded-circle" src="" alt=""> -->
-                            @else
-                            <div 
-                                style=" 
-                                    height: 250px; 
-                                    background-image: url('/storage/photo/cvimage/{{ $item->image_cover }}'); 
-                                    background-size: cover;
-                            ">
-                                <!-- Add Cover photo -->
-                            </div>
-                                <!-- <img src="/storage/photo/cvimage/{{ $item->image_cover }}" alt=""> -->
-                            @endif
-                    @endforeach
+                    @if ($item->image_cover == null)
+                        <div 
+                            style=" 
+                                height: 250px; 
+                                background-image: url(''); 
+                                background-size: cover;
+                        ">
+                            <!-- Add Cover photo -->
+                        </div>
+                        <!-- <img class="rounded-circle" src="" alt=""> -->
+                    @else
+                    <div 
+                        style=" 
+                            height: 250px; 
+                            background-image: url('/storage/photo/cvimage/{{ $item->image_cover }}'); 
+                            background-size: cover;
+                    ">
+                        <!-- Add Cover photo -->
+                    </div>
+                        <!-- <img src="/storage/photo/cvimage/{{ $item->image_cover }}" alt=""> -->
+                    @endif
+                @endforeach
                 
 
                 <!-- Profile infor -->
@@ -169,11 +169,6 @@
                                 <p>{{ $item->bio }}</p>
                             @endforeach
                         </div>
-                        <!-- <div class="text-dark py-2 border-bottom border-primary">
-                            @foreach ($bio as $item)
-                                <p>{{ $item->bio }}</p>
-                            @endforeach
-                        </div> -->
                         <!-- Follow Information -->
                         <div class="text-dark w-100">
                             <div class="row follow mb-3">
@@ -188,7 +183,7 @@
                                 </div>
                                 <div class="col-4">
                                     @if (count($followercounter)==0)
-                                    <a href="#" class="text-dark ">0 Follower</a>
+                                        <a href="#" class="text-dark ">0 Follower</a>
                                     @endif
                                     @foreach ($followercounter as $item)
                                         <a href="#" class="text-dark ">{{ $item->followernumber }} Follower</a>
@@ -251,8 +246,6 @@
                 </div>
             </div>
         </div>
-
-        
     </div>
 
     <!-- show post history -->

@@ -1,7 +1,7 @@
 @extends('layouts.header')
 
 @section('content')
-    <div class="container-fluid d-flex justify-content-center bg-white shadow position-relative sticky-top" style="height: 70px">
+    <div class="container-fluid d-flex justify-content-center bg-white shadow sticky-top" style="height: 70px">
         <div class="row d-flex justify-content-center w-100">
             <nav class="navbar navbar-expand-lg d-flex justify-content-center">
                 <a class="col-2 nav-link btn btn-outline-dark" href="#" style="color:black; " >Joined Class</a> <!--/joinedclass -->
