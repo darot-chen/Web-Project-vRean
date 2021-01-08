@@ -62,6 +62,27 @@ Route::post('/creatingmaterial','App\Http\Controllers\ClassController@creatingma
 // Creating Assignment
 Route::post('creatingassignment','App\Http\Controllers\ClassController@creatingassignment')->name('creatingassignment');
 // ============================================
+Route::resource('login', 'App\Http\Controllers\UseraccController');
+Route::post('home','App\Http\Controllers\UseraccController@log2')->name('log2');
+Route::resource('media', 'App\Http\Controllers\PostController');
+Route::post('like','App\Http\Controllers\PostController@like')->name('like');
+Route::post('showsearch','App\Http\Controllers\PostController@showsearch')->name('showsearch');
+Route::get('toprofile','App\Http\Controllers\PostController@toprofile')->name('toprofile');
+Route::resource('profile', 'App\Http\Controllers\ProfileController');
+Route::post('geteditprofile', 'App\Http\Controllers\ProfileController@geteditprofile')->name('geteditprofile');
+Route::post('followact','App\Http\Controllers\ProfileController@followact')->name('followact');
+Route::resource('class', 'App\Http\Controllers\ClassController');
+Route::get('joinedclass','App\Http\Controllers\ClassController@joinedclass');
+Route::post('createclass','App\Http\Controllers\ClassController@createclass')->name('createclass');
+Route::post('inclass','App\Http\Controllers\ClassController@inclass')->name('inclass');
+Route::post('joiningclass','App\Http\Controllers\ClassController@joiningclass')->name('joiningclass');
+
+Route::get('create_assignment','App\Http\Controllers\ClassController@createassignment');
+Route::post('create_material','App\Http\Controllers\ClassController@creatematerial');
+Route::post('/creatingmaterial','App\Http\Controllers\ClassController@creatingmaterial')->name('creatingmaterial');
+
+Route::post('creatingassignment','App\Http\Controllers\ClassController@creatingassignment')->name('creatingassignment');
+
 //Route::get('anotherprofile','App\Http\Controllers\ProfileController@anotherpf')->name('anotherprofile');     
 // Route::get('toprofile/{$anotherid}', function () {
 //      return redirect('/profile');
