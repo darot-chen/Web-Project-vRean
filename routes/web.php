@@ -66,7 +66,10 @@ Route::post('creatingassignment','App\Http\Controllers\ClassController@creatinga
 // Route::get('toprofile/{$anotherid}', function () {
 //      return redirect('/profile');
 // })->name('toprofile');
+<<<<<<< HEAD
+=======
 
+>>>>>>> close #3 user follow list and change profile image
 Route::get('editprofile',function(){
     return view('layouts.editprofile');
 })->name('editprofile');
