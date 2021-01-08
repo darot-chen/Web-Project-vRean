@@ -17,6 +17,52 @@ use App\Http\Controllers\PostController;
 Route::get('/', function(){
     return redirect('/login');
 });
+// Login
+Route::resource('login', 'App\Http\Controllers\UseraccController');
+// ================ MEDIA (HOME PAGE)============================
+// Home
+Route::post('home','App\Http\Controllers\UseraccController@log2')->name('log2');
+// Media
+Route::resource('media', 'App\Http\Controllers\PostController');
+// Like
+Route::post('like','App\Http\Controllers\PostController@like')->name('like');
+// ================ SEARCH ============================
+// Show Search
+Route::post('showsearch','App\Http\Controllers\PostController@showsearch')->name('showsearch');
+// ================ PROFILE ============================
+// Top Profile
+Route::get('toprofile','App\Http\Controllers\PostController@toprofile')->name('toprofile');
+// Profile
+Route::resource('profile', 'App\Http\Controllers\ProfileController');
+// Get editprofile
+Route::post('geteditprofile', 'App\Http\Controllers\ProfileController@geteditprofile')->name('geteditprofile');
+// ================= FOLLOW ===========================
+// Follow Act
+Route::post('followact','App\Http\Controllers\ProfileController@followact')->name('followact');
+// Follow List
+Route::post('followlist','App\Http\Controllers\ProfileController@followlist')->name('followlist');
+// ================= CLASS ===========================
+// Class
+Route::resource('class', 'App\Http\Controllers\ClassController');
+// Joined Class
+Route::get('joinedclass','App\Http\Controllers\ClassController@joinedclass');
+// Create Class
+Route::post('createclass','App\Http\Controllers\ClassController@createclass')->name('createclass');
+// In Class
+Route::post('inclass','App\Http\Controllers\ClassController@inclass')->name('inclass');
+// Joining Class
+Route::post('joiningclass','App\Http\Controllers\ClassController@joiningclass')->name('joiningclass');
+// ================ CREATE MATERIAL AND ASSIGNMENT============================
+// Create Assignment
+Route::get('create_assignment','App\Http\Controllers\ClassController@createassignment');
+// Create Material
+Route::post('create_material','App\Http\Controllers\ClassController@creatematerial');
+// Creating Material
+Route::post('/creatingmaterial','App\Http\Controllers\ClassController@creatingmaterial')->name('creatingmaterial');
+// Creating Assignment
+Route::post('creatingassignment','App\Http\Controllers\ClassController@creatingassignment')->name('creatingassignment');
+// ============================================
+=======
 Route::resource('login', 'App\Http\Controllers\UseraccController');
 Route::post('home','App\Http\Controllers\UseraccController@log2')->name('log2');
 Route::resource('media', 'App\Http\Controllers\PostController');
@@ -37,6 +83,7 @@ Route::post('create_material','App\Http\Controllers\ClassController@createmateri
 Route::post('/creatingmaterial','App\Http\Controllers\ClassController@creatingmaterial')->name('creatingmaterial');
 
 Route::post('creatingassignment','App\Http\Controllers\ClassController@creatingassignment')->name('creatingassignment');
+
 //Route::get('anotherprofile','App\Http\Controllers\ProfileController@anotherpf')->name('anotherprofile');     
 // Route::get('toprofile/{$anotherid}', function () {
 //      return redirect('/profile');
